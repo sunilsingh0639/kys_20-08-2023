@@ -1,0 +1,56 @@
+<div class="login-page">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 d-xs-none">
+            <div class="row mt-4 ml-2"><img src="http://103.224.246.103/qa/assets/img/profiles/logo1.png
+                    " alt="" style="height: 77px;"></div>
+            <div class="row ml-4"><img src="http://103.224.246.103/qa/assets/img/profiles/tansingh-ji.jpg" alt="..."
+                    class="img-thumbnail ml-4 p-2 mt-4" style="width: 300px;"></div>
+        </div>
+        <div class="col-4" style="padding-top: 150px;">
+            <div class="d-flex justify-content-end mb-2">
+                <h4>होनहार के खेल</h4>
+            </div>
+            <div class="d-flex justify-content-center mb-4">
+                <h4>राजस्थान रा पिछोला</h4>
+            </div>
+            <h4>जेल जीवन के संस्मरण </h4>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="row">
+                <div class="card" style="margin-top: 4rem;">
+                    <form [formGroup]="loginForm">
+                        <div class="text-center">
+                            <h4>LOGIN TO YOUR ACCOUNT</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email" formControlName="email"
+                                class="form-control ng-untouched ng-pristine ng-invalid" 
+                                name="email" required maxlength="32">
+
+                            <!-- <div *ngIf="email.errors && email.touched">
+
+                                <small class="text-danger" *ngIf="email.errors['required']">Email field is
+                                    requird</small>
+
+                                <small class="text-danger" *ngIf="email.errors['maxlength']">Email should be maximum 32
+                                    characters
+                                    long.</small>
+                                <small class="text-danger" *ngIf="email.errors['pattern']">Please enter a valid
+                                    email.</small>
+
+                            </div> -->
+
+
+                        </div> <br>
+                        <div class="form-group"><input type="password" formControlName="password" placeholder="Password"
+                                class="form-control ng-untouched ng-pristine ng-invalid"></div> <br>
+                        <div class="form-group"><button (click)="login()"
+                                class="btn btn-primary btn-block">Login</button>
+                        </div> <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

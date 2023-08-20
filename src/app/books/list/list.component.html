@@ -1,0 +1,171 @@
+<!-- <div class="container-fluid" style="margin-left: 2px;">
+  <div>
+    <nav class="navbar navbar-light header-page">
+      <div class="container-fluid"><a class="navbar-brand">{{heading}} </a>
+      </div>
+    </nav>
+  </div> -->
+<!-- <nav class="navbar navbar-light header-page">
+    <div class="container-fluid"><a class="navbar-brand">Manage Books </a>
+    </div>
+    </nav> -->
+
+
+
+
+
+
+
+
+<!-- <div class="d-flex align-items-center p-2 my-2 text-white rounded shadow-sm bg-primary"
+    style="background: linear-gradient(133.87deg,#dc3545 0%,#1d4fa2 50%,#c5198c 100%)">
+    <div class="lh-1">
+      <form novalidate="" class="col-12 col-lg-auto mb-1 mb-lg-0 me-lg-auto ng-untouched ng-pristine ng-valid"><input
+          type="search" placeholder="Search..." aria-label="Search" class="form-control search-height" #filter
+          (keyup)="sarch(filter.value)"></form>
+    </div>
+    <div class="btn-group ml-auto" style="margin-left: 70%;">
+      <button type="button" class="btn btn-primary btn-sm " data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+        New</button>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
+
+
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Book Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addNewBooks">
+            <div class="form-group row">
+              <label for="recipient-name" class="col-sm-2">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="recipient-name" placeholder="Book Name" appName
+                  formControlName="bookName">
+              </div>
+            </div>
+            <br>
+            <div class="form-group row">
+              <label for="message-text" class="col-sm-2">Price</label>
+              <div class="col-sm-10">
+                <input class="form-control" id="message-text" appNumber formControlName="pricing">
+              </div>
+            </div>
+            <br>
+            <div class="form-group row">
+              <label for="message-text" class="col-sm-2">Category</label>
+              <div class="col-sm-10">
+                <select class="form-control" formControlName="category">
+                  <option value="" disabled selected>Choose</option>
+                  <option value="पत्र पत्रिकाएं">पत्र पत्रिकाएं</option>
+                  <option value="साहित्य">साहित्य</option>
+
+                </select>
+              </div>
+
+            </div><br>
+            <div class="form-group row">
+              <label for="message-text" class="col-sm-2">Image</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="file" formControlName="attachment" (change)="onSelectedImage($event)">
+              </div>
+
+            </div>
+            <br>
+          </form>
+          <div>
+
+            <button type="button" (click)="postBookData()" class="btn btn-primary" data-bs-dismiss="modal"
+              aria-label="Close">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+
+
+
+<div>
+
+
+
+  <!-- <table class="col-12 table table-border">
+        <thead>
+            <tr>
+                <th *ngFor="let heading of headers">{{heading.name}}</th> -->
+  <!-- <th >name
+                    <i class="fa-solid fa-arrow-up-long" (click)="namesortup()"></i>
+                    <i class="fa-solid fa-arrow-down" (click)="namesortdown()"></i>
+                </th>
+
+                <th>image</th>
+                <th >price
+                    <i class="fa-solid fa-arrow-up-long" (click)="pricesortdown()"></i>
+                    <i class="fa-solid fa-arrow-down" (click)="pricesortup()"></i>
+                </th>
+                <th>category 
+                    <i class="fa-solid fa-arrow-up-long" (click)="categorysortup()"></i>
+                    <i class="fa-solid fa-arrow-down" (click)="categorysortdown()"></i>
+                </th>
+                <th>action</th> -->
+  <!-- </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Books of booklist; let i = index"> 
+                <td>{{(pageNumber-1)*10+i+1}}</td> 
+                <td>{{Books.bookName}}</td>
+                <td> <img [src]="Books.image" alt="" height="70px" width="80px"></td>
+                <td>{{Books.pricing | currency: 'INR'}}</td>
+                <td>{{Books.category}}</td>
+                <td>
+                    <button class="btn btn-success" style="border-radius: 50%;">
+                        <i class="fa-solid fa-pen"></i>
+                    </button> &nbsp;
+                    <button class="btn btn-danger" style="border-radius: 50%;">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <app-table [selectHeading]="bookHeading" [selectedComponent]="selectedComponent" [title]="heading" (updatedSearch)="sarch($event)" [Data]="booklist" [headers]="headers"
+    (updatedGetPaginate)="getPaginatedData($event)" (updatedPrevious)="previous($event)"
+    (updatedNext)="next($event)"></app-table>
+  <!-- (updateBookData)="postBookData($event)" -->
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+  <!-- <nav aria-label="page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" (click)="previous()"
+            [ngClass]="{ 'disabled': pageNumber === 1 }">Previous</a></li>
+        <li (click)="getPaginatedData(page)" class="page-item" *ngFor="let page of noOfPage ">
+          <a class="page-link">{{page}}</a>
+        </li>
+        <li class="page-item"><a class="page-link" (click)="next()"
+            [ngClass]="{ 'disabled': pageNumber === 4 }">Next</a></li>
+      </ul>
+    </nav>
+    <p> In total there are 31 books. </p> -->
+
+</div>
